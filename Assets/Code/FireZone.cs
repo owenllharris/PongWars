@@ -32,9 +32,12 @@ public class FireZone : MonoBehaviour {
 		RaycastHit hit;
 		if(Physics.Raycast(theTouch, out hit, 20f))
 		{
-			startPos = hit.point;
+			if( hit.collider == collider)
+			{
+				startPos = hit.point;
 
-			checkForFinish = true;
+				checkForFinish = true;
+			}
 		}
 	}
 
@@ -45,9 +48,12 @@ public class FireZone : MonoBehaviour {
 		RaycastHit hit;
 		if(Physics.Raycast(theTouch, out hit, 20f))
 		{
-			endPos = hit.point;
+			if( hit.collider == collider )
+			{
+				endPos = hit.point;
 
-			Fire();
+				Fire();
+			}
 		}
 	}
 
@@ -56,6 +62,7 @@ public class FireZone : MonoBehaviour {
 		Vector3 spawnPoint = endPos;
 		spawnPoint.z = 0;
 		GameObject newPuk = Instantiate(puk, spawnPoint, puk.transform.rotation) as GameObject;
+		newPuk.transform.parent = transform;
 		newPuk.rigidbody.AddForce( (endPos - startPos) * Vector3.Distance(endPos, startPos) * 20, ForceMode.VelocityChange);
 
 	}
