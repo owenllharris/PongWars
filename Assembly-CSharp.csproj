@@ -46,11 +46,6 @@
   <ItemGroup>
      <Compile Include="Assets\Code\FireZone.cs" />
      <Compile Include="Assets\Code\TestPhysics.cs" />
-     <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
-      <Project>{9A1F649E-83D1-9FF4-B27C-D7200C2BEB16}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
