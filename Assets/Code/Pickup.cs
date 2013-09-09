@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Pickup : MonoBehaviour {
 
+	public GameObject particle;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -16,7 +18,8 @@ public class Pickup : MonoBehaviour {
 
 	void Remove()
 	{
-		Destroy(gameObject);
+		Instantiate( particle, transform.position, Quaternion.identity );
+		Destroy( gameObject );
 	}
 
 	void OnTriggerEnter(Collider enterer)

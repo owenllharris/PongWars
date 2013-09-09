@@ -24,6 +24,7 @@ public class FireZone : MonoBehaviour {
 				TouchFinish();
 			}
 		}
+
 	}
 
 	void Touch()
